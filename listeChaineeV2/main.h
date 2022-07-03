@@ -84,7 +84,7 @@ void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
     }
     printf("I have find %d !\n",actuel->nombre);
 
-    
+    //test
    
 }
 #endif /* main_h */
