@@ -72,7 +72,7 @@ void afficherLaListe(Liste *liste){
     
 }
 
-void addMid(Liste *liste,int target,int nvNombre){ /* IDK  */
+void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
     Element *nouveau = malloc(sizeof(nouveau));
     if(liste == NULL){
         exit(EXIT_FAILURE);
