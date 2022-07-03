@@ -1,2 +1,5 @@
-listeChaineeV2.xcodeproj/project.xcworkspace/xcuserdata/ludovicdoppler.xcuserdatad/UserInterfaceState.xcuserstate
-**xcuserdata
+> find . -name "*xcuserdata"
+./.swiftpm/xcode/package.xcworkspace/xcuserdata
+./.swiftpm/xcode/xcuserdata
+./project_name.xcodeproj/xcuserdata
+./project_name.xcodeproj/project.xcworkspace/xcuserdata
