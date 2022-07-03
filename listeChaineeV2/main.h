@@ -47,7 +47,7 @@ void insertion(Liste *liste,int nvNombre){
     liste->premier = nouveau;
 }
 
-void suppression(Liste *liste){
+void suppression(Liste *liste){ //Erreur ici sup non arg manquant
     if(liste == NULL){
         exit(EXIT_FAILURE);
     }
@@ -74,9 +74,17 @@ void afficherLaListe(Liste *liste){
 
 void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
     Element *nouveau = malloc(sizeof(nouveau));
+    Element *actuel = liste->premier;
     if(liste == NULL){
         exit(EXIT_FAILURE);
     }
+    nouveau->nombre = nvNombre;
+    while (actuel->nombre != target) {
+        actuel = actuel->suivant;
+    }
+    printf("I have find %d !\n",actuel->nombre);
+
+    
    
 }
 #endif /* main_h */
