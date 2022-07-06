@@ -80,9 +80,18 @@ void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
     }
     nouveau->nombre = nvNombre;
     while (actuel->nombre != target) {
+        if(actuel->suivant == NULL){
+            exit(EXIT_FAILURE);
+        }
         actuel = actuel->suivant;
     }
+    nouveau->nombre = nvNombre;
     printf("I have find %d !\n",actuel->nombre);
+    /* Insertion du nouvel élément */
+    nouveau->suivant = actuel->suivant;
+    actuel->suivant = nouveau;
+    
+   
 
     //test
    
