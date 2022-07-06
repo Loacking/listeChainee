@@ -19,7 +19,8 @@ int main(int argc, const char * argv[]) {
     afficherLaListe(maListe); // 19 22 13 11 5 0
     addMid(maListe, 22, 14);
     addMid(maListe, 13, 133);
-    afficherLaListe(maListe);
+    suprMid(maListe, 133);
+    afficherLaListe(maListe); //19 22 14 13 133 11 5 0
     
     return 0;
 }

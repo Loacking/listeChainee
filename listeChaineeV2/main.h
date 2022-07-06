@@ -47,7 +47,7 @@ void insertion(Liste *liste,int nvNombre){
     liste->premier = nouveau;
 }
 
-void suppression(Liste *liste){ //Erreur ici sup non arg manquant
+void suppression(Liste *liste){ 
     if(liste == NULL){
         exit(EXIT_FAILURE);
     }
@@ -90,10 +90,27 @@ void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
     /* Insertion du nouvel élément */
     nouveau->suivant = actuel->suivant;
     actuel->suivant = nouveau;
-    
    
+}
 
-    //test
-   
+void suprMid(Liste *liste,int target){
+    if(liste == NULL){
+        exit(EXIT_FAILURE);
+    }
+    Element *actuel = liste->premier;
+    
+    while (actuel->nombre != target) {
+        if(actuel->suivant == NULL){
+            exit(EXIT_FAILURE);
+            printf("fail!");
+        }
+        actuel = actuel->suivant;
+    }
+    Element *aSupr = actuel->suivant;
+    actuel->suivant = actuel->suivant; /*  ICI pas encore fini  */
+    
+    free(aSupr);
+    
+    
 }
 #endif /* main_h */
