@@ -79,14 +79,16 @@ void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
         exit(EXIT_FAILURE);
     }
     nouveau->nombre = nvNombre;
-    while (actuel->nombre != target) {
+    int i = 0;
+    while (i != target) {
         if(actuel->suivant == NULL){
             exit(EXIT_FAILURE);
         }
         actuel = actuel->suivant;
+        i++;
     }
     nouveau->nombre = nvNombre;
-    printf("I have find %d !\n",actuel->nombre);
+    printf("Add a number after %d...\n%d has been successfully added!\n",actuel->nombre,nvNombre);
     /* Inserting the new element */
     nouveau->suivant = actuel->suivant;
     actuel->suivant = nouveau;
@@ -104,7 +106,6 @@ void suprMid(Liste *liste,int target){
         while (i < target) {
             i++;
             actuel = actuel->suivant;
-            printf("*");
         }
         aSupr = actuel->suivant;
         actuel->suivant = actuel->suivant->suivant;
@@ -114,9 +115,13 @@ void suprMid(Liste *liste,int target){
         printf("Removing... %d is free! \n",liste->premier->nombre);
         suppression(liste);
     }
-    
    
+}
+
+void Thanos(Liste *liste){
+    while (liste != NULL) {
+        
+    }
     
-   
 }
 #endif /* main_h */
