@@ -42,7 +42,7 @@ void insertion(Liste *liste,int nvNombre){
         exit(EXIT_FAILURE);
     }
     nouveau->nombre = nvNombre;
-    /* Insertion de la nouvelle donnee */
+    /* Inserting the new element */
     nouveau->suivant = liste->premier;
     liste->premier = nouveau;
 }
@@ -87,7 +87,7 @@ void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
     }
     nouveau->nombre = nvNombre;
     printf("I have find %d !\n",actuel->nombre);
-    /* Insertion du nouvel élément */
+    /* Inserting the new element */
     nouveau->suivant = actuel->suivant;
     actuel->suivant = nouveau;
    
@@ -97,20 +97,26 @@ void suprMid(Liste *liste,int target){
     if(liste == NULL){
         exit(EXIT_FAILURE);
     }
-    Element *actuel = liste->premier;
-    
-    while (actuel->nombre != target) {
-        if(actuel->suivant == NULL){
-            exit(EXIT_FAILURE);
-            printf("fail!");
+    if(target != 0){
+        Element *actuel = liste->premier;
+        Element *aSupr = liste->premier;
+        int i = 0;
+        while (i < target) {
+            actuel = actuel->suivant;
+            i++;
+            printf("*");
         }
-        actuel = actuel->suivant;
+        aSupr = actuel->suivant;
+        actuel->suivant = actuel->suivant->suivant;
+        printf("Removing... %d is free! \n",aSupr->nombre);
+        free(aSupr);
+    }else{
+        printf("Removing... %d is free! \n",liste->premier->nombre);
+        suppression(liste);
     }
-    Element *aSupr = actuel->suivant;
-    actuel->suivant = actuel->suivant; /*  ICI pas encore fini  */
     
-    free(aSupr);
+   
     
-    
+   
 }
 #endif /* main_h */
