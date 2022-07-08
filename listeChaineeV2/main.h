@@ -100,10 +100,10 @@ void suprMid(Liste *liste,int target){
     if(target != 0){
         Element *actuel = liste->premier;
         Element *aSupr = liste->premier;
-        int i = 0;
+        int i = 1;
         while (i < target) {
-            actuel = actuel->suivant;
             i++;
+            actuel = actuel->suivant;
             printf("*");
         }
         aSupr = actuel->suivant;

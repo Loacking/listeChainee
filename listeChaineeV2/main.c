@@ -23,7 +23,7 @@ int main(int argc, const char * argv[]) {
     afficherLaListe(maListe);
     insertion(maListe, 5000);
     afficherLaListe(maListe);
-    suprMid(maListe, 4);
+    suprMid(maListe, 2);
     afficherLaListe(maListe);
     
     
