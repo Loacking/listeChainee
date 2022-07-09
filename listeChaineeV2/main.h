@@ -58,7 +58,9 @@ void suppression(Liste *liste){
         
     }
 }
-
+int isEmpty(Liste *liste){
+    return liste->premier == NULL;
+}
 void afficherLaListe(Liste *liste){
     if(liste == NULL){
         exit(EXIT_FAILURE);
@@ -118,10 +120,20 @@ void suprMid(Liste *liste,int target){
    
 }
 
-void Thanos(Liste *liste){
-    while (liste != NULL) {
+
+
+void thanos(Liste *liste){
+   
+    
+    while (liste->premier != NULL) {
+        printf("here : ");
+        afficherLaListe(liste);
+        Element *tmp = liste->premier;
+        liste->premier = liste->premier->suivant;
+        free(tmp);
+        
         
     }
-    
 }
+
 #endif /* main_h */

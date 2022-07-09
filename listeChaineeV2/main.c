@@ -11,22 +11,20 @@
 int main(int argc, const char * argv[]) {
 
     Liste *maListe = initialisation();
+    afficherLaListe(maListe);
     insertion(maListe, 100);
     afficherLaListe(maListe);
-    insertion(maListe, 444);
+    insertion(maListe, 999);
     afficherLaListe(maListe);
-    insertion(maListe, 666);
+    insertion(maListe, 767 );
     afficherLaListe(maListe);
-    insertion(maListe, 2000);
+    insertion(maListe, 42);
     afficherLaListe(maListe);
-    insertion(maListe, 30000);
+    thanos(maListe);
+    //isEmpty(maListe);
     afficherLaListe(maListe);
-    insertion(maListe, 5000);
-    afficherLaListe(maListe);
-    suprMid(maListe, 2);
-    afficherLaListe(maListe);
-    addMid(maListe, 1, 10);
-    afficherLaListe(maListe);
+    
+
     
     
     
