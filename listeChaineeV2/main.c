@@ -20,9 +20,12 @@ int main(int argc, const char * argv[]) {
     afficherLaListe(maListe);
     insertion(maListe, 42);
     afficherLaListe(maListe);
+    suprMid(maListe, 0);
     thanos(maListe);
-    //isEmpty(maListe);
     afficherLaListe(maListe);
+    printf("Nombre d'elt : %d \n",maListe->nbElements);
+
+   
     
 
     

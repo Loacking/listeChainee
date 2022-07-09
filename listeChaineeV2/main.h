@@ -18,6 +18,7 @@ struct Element{
 typedef struct Liste Liste;
 struct Liste{
     Element *premier; //Pointeur sur le premier element de la liste
+    int nbElements;
 };
 
 /* Mes fonctions */
@@ -29,6 +30,7 @@ Liste *initialisation(){
         exit(EXIT_FAILURE);
     }
     element->suivant = NULL;
+    liste->nbElements = 1;
     element->nombre = 0;
     liste->premier = element;
     
@@ -45,6 +47,7 @@ void insertion(Liste *liste,int nvNombre){
     /* Inserting the new element */
     nouveau->suivant = liste->premier;
     liste->premier = nouveau;
+    liste->nbElements++;
 }
 
 void suppression(Liste *liste){ 
@@ -55,7 +58,7 @@ void suppression(Liste *liste){
         Element *aSupr = liste->premier;
         liste->premier = liste->premier->suivant;
         free(aSupr);
-        
+        liste->nbElements--;
     }
 }
 int isEmpty(Liste *liste){
@@ -94,6 +97,7 @@ void addMid(Liste *liste,int target,int nvNombre){ /* IDK  ça fonctionne*/
     /* Inserting the new element */
     nouveau->suivant = actuel->suivant;
     actuel->suivant = nouveau;
+    liste->nbElements++;
    
 }
 
@@ -113,6 +117,7 @@ void suprMid(Liste *liste,int target){
         actuel->suivant = actuel->suivant->suivant;
         printf("Removing... %d is free! \n",aSupr->nombre);
         free(aSupr);
+        liste->nbElements--;
     }else{
         printf("Removing... %d is free! \n",liste->premier->nombre);
         suppression(liste);
@@ -124,16 +129,16 @@ void suprMid(Liste *liste,int target){
 
 void thanos(Liste *liste){
    
-    
+    printf("Destruction of the list in progress...\n");
     while (liste->premier != NULL) {
-        printf("here : ");
         afficherLaListe(liste);
         Element *tmp = liste->premier;
         liste->premier = liste->premier->suivant;
         free(tmp);
-        
+        liste->nbElements = 0;
         
     }
+    printf("The list is empty! \n");
 }
 
 #endif /* main_h */
